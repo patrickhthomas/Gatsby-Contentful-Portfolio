@@ -24,25 +24,10 @@ module.exports = {
     image: '/images/share.jpg',
     menuLinks: [
       {
-        name: 'About me',
-        slug: '/',
-      },
-      {
-        name: 'UX Design',
-        slug: '/work/',
-      },
-      {
-        name: 'Branding + Photo',
-        slug: '/branding/',
-      },
-      {
-        name: 'Blog',
-        slug: '/blog/',
-      },
-      {
         name: 'Contact',
         slug: '/contact/',
       },
+
     ],
     postsPerFirstPage: 7,
     postsPerPage: 6,
@@ -52,15 +37,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-emotion`,
     'gatsby-plugin-theme-ui',
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `tomato`,
-        // Disable the loading spinner.
-        showSpinner: true,
-      },
-    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -101,7 +77,7 @@ module.exports = {
       options: {
         name: 'GCN',
         short_name: 'GCN',
-        start_url: '/',
+        start_url: '/contact/',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         display: 'minimal-ui',

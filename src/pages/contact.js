@@ -45,8 +45,10 @@ const Contact = ({ data }) => {
       <SEO title="Contact" description="Contact description goes here" />
       <Container>
         <Wrapper>
-                  <HeaderText><h1 className="pageTitle">Contact</h1></HeaderText>
-                  <Text>{data.contentfulContact.description.description}</Text>
+          
+                  <HeaderText><h1 className="pageTitle">Sorry!</h1></HeaderText>
+                  <HeaderText><h2 className="pageTitle">my site is currently undergoing some routine maintenance</h2></HeaderText>
+                  <Text>In the meantime, get in touch with me and I can send you some examples of my work.</Text>
         <ContactForm>
         </ContactForm>
     
