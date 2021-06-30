@@ -24,29 +24,10 @@ module.exports = {
     image: '/images/share.jpg',
     menuLinks: [
       {
-        name: 'About me',
-        slug: '/',
-      },
-      {
-        name: 'UX Design',
-        slug: '/work/',
-      },
-      {
-        name: 'Branding + Photo',
-        slug: '/branding/',
-      },
-      {
-        name: 'Blog',
-        slug: '/blog/',
-      },
-      {
         name: 'Contact',
         slug: '/contact/',
       },
-      {
-        name: 'Test',
-        slug: '/testPage/',
-      },
+
     ],
     postsPerFirstPage: 7,
     postsPerPage: 6,
@@ -96,7 +77,7 @@ module.exports = {
       options: {
         name: 'GCN',
         short_name: 'GCN',
-        start_url: '/',
+        start_url: '/contact/',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         display: 'minimal-ui',

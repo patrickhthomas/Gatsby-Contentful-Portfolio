@@ -1,201 +1,76 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import CardList from '../components/CardList'
-import Card from '../components/Card'
 import Container from '../components/Container'
-import Pagination from '../components/Pagination'
-import SEO from '../components/SEO'
-import { startCase } from 'lodash'
-import HomeHero from '../components/HomeHero'
-import PreviewHome from'../components/PreviewHome'
 import HeaderText from '../components/HeaderText'
-import HomeSection from '../components/HomeSection'
+import ContactForm from '../components/ContactForm'
+import SEO from '../components/SEO'
+import styled from '@emotion/styled'
+import { graphql } from "gatsby"
+import github from '../../static/images/github.svg'
+import instagram from '../../static/images/instagram.svg'
+import twitter from '../../static/images/twitter.svg'
+import linkedin from '../../static/images/linkedin.svg'
 
 
+const Wrapper=styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 2em;
+`
 
-const Posts = ({ data, pageContext }) => {
-  const about = data.contentfulPage
-  const preview = data.allContentfulPiece.edges
-  const homePreview1 = data.allContentfulPiece.edges[2]
-  const homePreview2 = data.allContentfulPiece.edges[4]
-  const posts = data.allContentfulPost.edges
-  const { humanPageNumber, basePath } = pageContext
-  const isFirstPage = humanPageNumber === 1
-  const previewInfo = data.contentfulPreviewInfo
-  const heroDescription = data.contentfulHeroDescription.description.internal.content
-  let featuredPost
-  let ogImage
-  let sections = data.allContentfulHomeSection.edges
+const Text = styled.p`
+max-width: 650px;
+margin: auto;
+`
+const Social= styled.div`
+max-width: 650px;
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-between;
+margin: auto;
+img {
+  max-width: 3.5em;
+}
+a {
+  pointer: cursor;
+}
+`
 
-  try {
-    featuredPost = posts[0].node
-  } catch (error) {
-    featuredPost = null
-  }
-  try {
-    ogImage = posts[0].node.heroImage.ogimg.src
-  } catch (error) {
-    ogImage = null
-  }
+
+const Contact = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={startCase(basePath)} image={ogImage} />
+      <SEO title="Contact" description="Contact description goes here" />
       <Container>
-        <HomeHero 
-        imgLeft={data.contentfulHeroImageLeft.image.file.url}
-        imgRight={data.contentfulHeroImageRight.image.file.url}
-        heroDescription={heroDescription}
-        />
-        <Container>
-        <HeaderText><h2>Featured work</h2></HeaderText>
-            <PreviewHome
-            preview={preview}
-            previewInfo={previewInfo}
-            basePath={basePath}
-            />
-        </Container>
-        <HomeSection
-        sections={sections}
-        />
-
+        <Wrapper>
+          
+                  <HeaderText><h1 className="pageTitle">Sorry!</h1></HeaderText>
+                  <HeaderText><h2 className="pageTitle">my site is currently undergoing some routine maintenance</h2></HeaderText>
+                  <Text>In the meantime, get in touch with me and I can send you some examples of my work.</Text>
+        <ContactForm>
+        </ContactForm>
+    
+        </Wrapper>
       </Container>
-      <Pagination context={pageContext} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query($skip: Int!, $limit: Int!) {
-    allContentfulPost(
-      sort: { fields: [publishDate], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          title
-          id
-          slug
-          publishDate(formatString: "MMMM DD, YYYY")
-          heroImage {
-            title
-            fluid(maxWidth: 1800) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
-            }
-            ogimg: resize(width: 1800) {
-              src
-            }
-          }
-          body {
-            childMarkdownRemark {
-              timeToRead
-              html
-              excerpt(pruneLength: 80)
-            }
-          }
-        }
-      }
-    }
-      contentfulPage(slug: {eq: "about"}) {
-    title
-    slug
-    metaDescription {
-      internal {
-        content
-      }
-    }
-    body {
-      childMarkdownRemark {
-        html
-        excerpt(pruneLength: 320)
-      }
-    }
-  }
-  allContentfulPiece(sort: {fields: publishDate, order: DESC}) {
-    edges {
-      node {
-        title
-        id
-        slug
-        publishDate(formatString: "MMMM DD, YYYY")
-        role
-        excerpt {
-        childMarkdownRemark {
-          timeToRead
-          html
-          excerpt(pruneLength: 60)
-        }
-      }
-        body {
-          childMarkdownRemark {
-            html
-            excerpt(pruneLength: 120)
-          }
-        }
-        heroImage {
-          file {
-            url
-          }
-        }
-      }
-    }
-  }
-  contentfulHeroImageLeft {
-    image {
-      file {
-        url
-      }
-    }
-  }
-  contentfulHeroImageRight {
-    image {
-      file {
-        url
-      }
-    }
-  }
-    contentfulPreviewInfo {
-    paragraph {
-      internal {
-        content
-      }
-      childMarkdownRemark {
-        html
-      }
-    }
-    previewTitle1 {
-      internal {
-        content
-      }
-    }
-    previewTitle2 {
-      internal {
-        content
-      }
-    }
-  }
-    contentfulHeroDescription {
+query ContQuery {
+  contentfulContact {
     description {
-      internal {
-        content
-      }
+      description
     }
+    twitter
+    linkedIn
+    instagram
+    gitHub
   }
-  allContentfulHomeSection(sort: {order: ASC, fields: order}) {
-    edges {
-      node {
-        content {
-          childMarkdownRemark {
-            html
-          }
-        }
-        title
-      }
-    }
-  }
-  }
+}
+
 `
 
-export default Posts
+export default Contact
