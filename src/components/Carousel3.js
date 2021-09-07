@@ -64,7 +64,7 @@ grid-template-columns: 1fr;
 }
 
 .squareHeader {
-    max-width: 3em;
+    max-width: 9em;
 }
 `
 
@@ -95,6 +95,9 @@ const CustomCarousel3 = ({ alias }) => {
         <HeaderText><h2 className="squareHeader">{alias.title}</h2></HeaderText>
                 <Description dangerouslySetInnerHTML={{ __html: alias.description.childMarkdownRemark.html }}>
         </Description>
+                <Link to='/work-examples'>
+            <CustomButton label='See examples >'/>
+        </Link>
         <Enter onClick={() => handleSize()}>
             <CustomButton className='fullScreen' label='Full Screen'/>
         </Enter>
