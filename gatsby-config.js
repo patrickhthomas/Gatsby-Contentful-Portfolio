@@ -28,15 +28,11 @@ module.exports = {
         slug: '/',
       },
       {
-        name: 'Digital Marketing',
-        slug: '/digital-marketing/',
+        name: 'Examples',
+        slug: '/work-examples/',
       },
       {
-        name: 'Pricing',
-        slug: '/pricing/',
-      },
-      {
-        name: 'Hire me',
+        name: 'Hire me!',
         slug: '/hire-me/',
       },
     ],

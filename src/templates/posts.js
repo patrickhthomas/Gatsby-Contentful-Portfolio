@@ -9,7 +9,7 @@ import SEO from '../components/SEO'
 import { startCase } from 'lodash'
 import HomeHero from '../components/HomeHero'
 import HomeSection from '../components/HomeSection'
-import CustomCarousel2 from '../components/Carousel2'
+import CustomCarousel3 from '../components/Carousel3'
 
 
 
@@ -48,10 +48,7 @@ const Posts = ({ data, pageContext }) => {
 
 
 
-     <CustomCarousel2 
-    alias1={data.digitalMarketingPhoto}
-    alias2={data.webDesignPhoto}
-    />
+<CustomCarousel3 alias={data.digitalMarketingPhoto}/>
 
     <HomeSection
     sections={sections}

@@ -8,6 +8,7 @@ import SEO from '../components/SEO'
 import { startCase } from 'lodash'
 import { Link } from 'gatsby'
 import CustomCarousel3 from '../components/Carousel3'
+import CustomCarousel2 from '../components/Carousel2'
 
 const Hero = styled.div`
 padding-bottom: 2em;
@@ -24,17 +25,16 @@ const DigitalMarketingPage
         <SEO title={startCase(basePath)} image={ogImage} />
         <Container>
         <Hero>
-        <HeaderText><h1>Digital Marketing</h1></HeaderText>
+        <HeaderText><h1>Examples of my work</h1></HeaderText>
         <HeaderText><h4 dangerouslySetInnerHTML={{ __html: data.digitalMarketingPhoto.description.childMarkdownRemark.html }}>
         </h4>
         </HeaderText>
         </Hero>
-        <CustomCarousel3 alias={data.productPhoto}/>
-        
-        <CustomCarousel3 alias={data.styleGuides}/>
 
-        <CustomCarousel3 alias={data.logoAlbum}/>
-        
+        <CustomCarousel2 alias={data.logoAlbum}/>
+        <CustomCarousel2 alias={data.illustrations}/>
+        <CustomCarousel2 alias={data.ui}/>
+        <CustomCarousel2 alias={data.styleGuides}/>
         </Container>
         </Layout>
         )
@@ -42,7 +42,7 @@ const DigitalMarketingPage
     
     export const query = graphql`
     query DigitalMarketingQuery {
-        productPhoto: contentfulPhotoAlbum(contentful_id: {eq: "34C1e43oFbfXO76Be0HdA9"}) {
+        illustrations: contentfulPhotoAlbum(contentful_id: {eq: "7aOnxApeOJsR87ZKnRWvmw"}) {
             title
             description {
                 childMarkdownRemark {
@@ -55,7 +55,19 @@ const DigitalMarketingPage
                 }
             }
         }
-        
+        ui: contentfulPhotoAlbum(contentful_id: {eq: "5vkc3TWJyRESx2k5ygla0z"}) {
+            title
+            description {
+                childMarkdownRemark {
+                    html
+                }
+            }
+            photos {
+                file {
+                    url
+                }
+            }
+        }
         styleGuides: contentfulPhotoAlbum(contentful_id: {eq: "27iDSZdHgMbehTWqSnlkZw"}) {
             title
             description {
