@@ -30,11 +30,14 @@ a {
 .squareHeader {
     max-width: 10em;
 }
+p {
+    padding-bottom: 1em;
+}
 `
 
 
 
-const Desc = styled.h3`
+const Desc = styled.p`
 width: 100%;
 padding-bottom: 1em;
 `

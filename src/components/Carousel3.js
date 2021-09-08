@@ -24,6 +24,9 @@ grid-gap: 2em;
         justify-self: end;
     }
 }
+button {
+    margin-bottom: 1em;
+}
 `
 
 const FullScreenModal = styled.div`

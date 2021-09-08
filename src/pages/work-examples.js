@@ -6,8 +6,6 @@ import Container from '../components/Container'
 import styled from '@emotion/styled'
 import SEO from '../components/SEO'
 import { startCase } from 'lodash'
-import { Link } from 'gatsby'
-import CustomCarousel3 from '../components/Carousel3'
 import CustomCarousel2 from '../components/Carousel2'
 
 const Hero = styled.div`
@@ -26,9 +24,8 @@ const DigitalMarketingPage
         <Container>
         <Hero>
         <HeaderText><h1>My work</h1></HeaderText>
-        <HeaderText><h4 dangerouslySetInnerHTML={{ __html: data.digitalMarketingPhoto.description.childMarkdownRemark.html }}>
-        </h4>
-        </HeaderText>
+        <p dangerouslySetInnerHTML={{ __html: data.digitalMarketingPhoto.description.childMarkdownRemark.html }}>
+        </p>
         </Hero>
 
         <CustomCarousel2 alias={data.logoAlbum}/>
@@ -45,6 +42,7 @@ const DigitalMarketingPage
         illustrations: contentfulPhotoAlbum(contentful_id: {eq: "7aOnxApeOJsR87ZKnRWvmw"}) {
             title
             description {
+                description
                 childMarkdownRemark {
                     html
                 }
