@@ -196,6 +196,13 @@ const Menu = props => {
               </Link>
             </li>
           ))}
+                <a
+  href="https://patrickthomas.photos"
+  rel="nofollow noopener noreferrer"
+  target="_blank"
+  >
+          patrickthomas.photos
+          </a>
         </ul>
         <Collapsible className="closeUL" openedClassName="openUL" trigger={<Trigger><img src={menu}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened'>
                 <ul className="smallUL">
@@ -206,6 +213,13 @@ const Menu = props => {
               </Link>
             </li>
           ))}
+                <a
+  href="https://patrickthomas.photos"
+  rel="nofollow noopener noreferrer"
+  target="_blank"
+  >
+          patrickthomas.photos
+          </a>
         </ul>
         </Collapsible>
       </Nav>

@@ -12,11 +12,11 @@ const Container = styled.div`
  display: flex;
  padding-bottom: 3em;
 position: relative;
-   @media (min-width: ${props => props.theme.responsive.small}) {
+   @media (min-width: ${props => props.theme.responsive.medium}) {
      width: 100vw;
      margin-left: calc(50% - 50vw);
   }
-   @media (min-width: ${props => props.theme.responsive.large}) {
+   @media (min-width: ${props => props.theme.responsive.medium}) {
      max-width: ${props => props.theme.sizes.maxWidth};
       width: 100%;
       margin-left: 0;
@@ -36,7 +36,7 @@ const Grid = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 1rem;
   grid-template-rows: auto auto;
-  @media (min-width: ${props => props.theme.responsive.small}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: stretch;
@@ -46,7 +46,7 @@ const Grid = styled.div`
     overflow: hidden;
   }
 
-  @media (min-width: ${props => props.theme.responsive.large}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
     &::after {
     content: " ";
     width: 2000px;
@@ -76,7 +76,7 @@ const Me = styled.div`
   width: 100vw;
   margin-left: calc(50% - 50vw);
   align-items: flex-start;
-  @media (min-width: ${props => props.theme.responsive.small}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -88,7 +88,7 @@ const MyPic = styled.img`
 
   width: 100%;
   height: auto;
-  @media (min-width: ${props => props.theme.responsive.small}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
     display: flex;
     width: 100%;
     grid-column: 1 / 1;
@@ -101,7 +101,7 @@ const MyPic = styled.img`
 
 const BgPic = styled.img`
   display: none;
-  @media (min-width: ${props => props.theme.responsive.small}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
 
     display: flex;
     width: 100%;
@@ -145,7 +145,7 @@ const Text = styled.div`
     margin: 0 0 2em 0;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    @media (min-width: ${props => props.theme.responsive.small}) {
+    @media (min-width: ${props => props.theme.responsive.medium}) {
     color: ${props => props.theme.colors.white};
     padding-left: 1.5em;
   }
@@ -217,11 +217,11 @@ const Text = styled.div`
     }
   }
   margin-bottom: -2rem;
-  @media (min-width: ${props => props.theme.responsive.small}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
     margin-bottom: 0;
   }
 
-  @media (min-width: ${props => props.theme.responsive.large}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
     h1 {
       padding-left: 0;
     }

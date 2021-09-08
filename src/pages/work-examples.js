@@ -25,7 +25,7 @@ const DigitalMarketingPage
         <SEO title={startCase(basePath)} image={ogImage} />
         <Container>
         <Hero>
-        <HeaderText><h1>Examples of my work</h1></HeaderText>
+        <HeaderText><h1>My work</h1></HeaderText>
         <HeaderText><h4 dangerouslySetInnerHTML={{ __html: data.digitalMarketingPhoto.description.childMarkdownRemark.html }}>
         </h4>
         </HeaderText>

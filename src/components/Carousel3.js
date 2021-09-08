@@ -9,6 +9,10 @@ import CustomButton from './CustomButton'
 
 const Description = styled.p`
 width: 100%;
+padding-bottom: 1em;
+p {
+    padding-bottom: 1em;
+}
 `
 const Container1 = styled.div`
 display: grid;
@@ -98,15 +102,6 @@ const CustomCarousel3 = ({ alias }) => {
                 <Link to='/work-examples'>
             <CustomButton label='See examples >'/>
         </Link>
-        <Enter onClick={() => handleSize()}>
-            <CustomButton className='fullScreen' label='Full Screen'/>
-        </Enter>
-        <GalleryPhotos
-        buttonLabel='Next'
-        thumbAlias={alias}
-        photoSrc={alias.photos.map(photo => (
-            photo.file.url
-        ))}/>
         </Container2>
 
             

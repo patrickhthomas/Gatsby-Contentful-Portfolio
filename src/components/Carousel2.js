@@ -15,7 +15,7 @@ place-content: center;
 
 const Container2 = styled.div`
 padding-bottom: 2em;
-max-width: 90%;
+max-width: 100%;
 margin: auto;
 display: grid;
 grid-template-rows: auto auto auto;
