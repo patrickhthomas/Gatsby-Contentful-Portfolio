@@ -78,7 +78,7 @@ background-color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-max-width: 720px;
+max-width: 600px;
 }
 
 `

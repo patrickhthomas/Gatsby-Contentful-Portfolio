@@ -86,17 +86,6 @@ const CustomCarousel3 = ({ alias }) => {
     
     return (
         <>
-        <FullScreenModal className={fullScreen ? 'fullScreen' : 'minimized'}>
-        <Exit onClick={() => handleSize()}>
-            <CustomButton label='Exit'/>
-        </Exit>
-        <FullScreenGallery
-        buttonLabel='Next'
-        photoSrc={alias.photos.map(photo => (
-            photo.file.url
-        ))}
-        />
-        </FullScreenModal>
         <Container1>
         <Container2>
         <HeaderText><h2 className="squareHeader">{alias.title}</h2></HeaderText>

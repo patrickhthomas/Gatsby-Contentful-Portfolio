@@ -24,8 +24,6 @@ const DigitalMarketingPage
         <Container>
         <Hero>
         <HeaderText><h1>My work</h1></HeaderText>
-        <p dangerouslySetInnerHTML={{ __html: data.digitalMarketingPhoto.description.childMarkdownRemark.html }}>
-        </p>
         </Hero>
 
         <CustomCarousel2 alias={data.logoAlbum}/>
